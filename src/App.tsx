@@ -1,12 +1,7 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   const [text_e, setText_e]  = useState("e")
   const [text_dot, setText_dot]  = useState(".")
   const [text_space, setText_space]  = useState("")
@@ -33,7 +28,7 @@ function App() {
     const start = async () => {
       await new Promise(r => setTimeout(r, 1500))
       backspace(setText_e, text_e, 1)
-      type(setText_e, "ë ", 0)
+      type(setText_e, "\u00eb ", 0)
       backspace(setText_dot, text_dot, 1)
       type(setText_dot, "an ", 0)
       type(setText_space, " ", 0)
@@ -47,21 +42,12 @@ function App() {
   return (
     <>
       <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
         <div>
+          <div className="backgroundText">
+            COMING SOON...
+          </div>
           <h1>zo{text_e}v{text_dot}de{text_space}v{text_egte}</h1>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
       </section>
     </>
   )
